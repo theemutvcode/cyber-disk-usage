@@ -11,7 +11,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(QT Core Gui Widgets Quick QuickControls2)
 find_package(Qt5 REQUIRED ${QT})
-find_package(MeuiKit)
 
 set(SRCS
     main.cpp
@@ -28,7 +27,6 @@ target_link_libraries(cyber-disk-usage
     Qt5::Widgets
     Qt5::Quick
     Qt5::QuickControls2
-    MeuiKit
 )
 
 install(TARGETS cyber-disk-usage RUNTIME DESTINATION /usr/bin)
