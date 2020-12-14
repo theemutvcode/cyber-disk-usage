@@ -9,9 +9,9 @@ ApplicationWindow {
     visible: true
     id: rootWindow
     title: qsTr("Disk Usage")
-    width: 600
+    width: 500
     height: 400
-    minimumWidth: 600
+    minimumWidth: 500
     minimumHeight: 400
 
     background: Rectangle {
@@ -21,6 +21,7 @@ ApplicationWindow {
     Backend {
         id: backend
     }
+
 
     DelegateModel {
         id: driveModel
@@ -41,5 +42,7 @@ ApplicationWindow {
         id: listView
         anchors.fill: parent
         model: driveModel
+
+        ScrollBar.vertical: ScrollBar {}
     }
 }

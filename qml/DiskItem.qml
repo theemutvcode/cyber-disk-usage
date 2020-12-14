@@ -14,14 +14,6 @@ Item {
 
     Layout.fillWidth: true
 
-    Rectangle {
-        id: background
-        anchors.fill: parent
-        anchors.margins: Meui.Units.smallSpacing
-        color: Meui.Theme.viewBackgroundColor
-        radius: Meui.Theme.smallRadius
-    }
-
     RowLayout {
         id: mainLayout
         anchors.fill: parent
