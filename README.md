@@ -9,7 +9,7 @@ Copyright (c) CyberOS Project 2020
 
 ## Dependencies
 ```bash
-sudo pacman -S qt5-base qt5-quickcontrols
+sudo pacman -S qt5-base qt5-quickcontrols2
 ```
 You'll also need to build/install [MeuiKit](https://github.com/cyberos/meuikit) to use this properly.
 
