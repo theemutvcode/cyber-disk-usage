@@ -5,7 +5,7 @@ import QtQml.Models 2.2
 import MeuiKit 1.0 as Meui
 import org.cyber.DiskUsage 1.0
 
-ApplicationWindow {
+Meui.Window {
     visible: true
     id: rootWindow
     title: qsTr("Disk Usage")
@@ -13,10 +13,6 @@ ApplicationWindow {
     height: 400
     minimumWidth: 500
     minimumHeight: 400
-
-    background: Rectangle {
-        color: Meui.Theme.backgroundColor
-    }
 
     Backend {
         id: backend
@@ -38,11 +34,18 @@ ApplicationWindow {
         }
     }
 
-    ListView {
-        id: listView
-        anchors.fill: parent
-        model: driveModel
+    content: Rectangle {
+        //anchors.fill: parent
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        color: "transparent"
+        ListView {
+            id: listView
+            anchors.fill: parent
+            model: driveModel
+            clip: true
 
-        ScrollBar.vertical: ScrollBar {}
+            ScrollBar.vertical: ScrollBar {}
+        }
     }
 }
