@@ -34,10 +34,8 @@ Meui.Window {
         }
     }
 
-    content: Rectangle {
-        //anchors.fill: parent
-        Layout.fillHeight: true
-        Layout.fillWidth: true
+    Rectangle {
+        anchors.fill: parent
         color: "transparent"
         ListView {
             id: listView
