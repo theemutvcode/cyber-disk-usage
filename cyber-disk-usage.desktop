@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Disk Usage
 Exec=cyber-disk-usage
-Icon=drive-removable-media
+Icon=gparted
 Terminal=false
 Type=Application
 StartupNotify=true
