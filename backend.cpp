@@ -21,11 +21,13 @@ QString Drive::usage()
         // return in MB instead
         float mbUsed = bytesUsed / 1024 / 1024;
         float mbTotal = float(m_drive.bytesTotal()) / 1024 / 1024;
-        return QString::number(qCeil(mbUsed)) + "/" + QString::number(qCeil(mbTotal)) + tr(" MB used");
+        return tr("%1/%2 MB used", "%1 - used space; %2 - total space")
+            .arg(QString::number(qCeil(mbUsed)), QString::number(qCeil(mbTotal)));
     }
     float gbUsed = bytesUsed / 1024 / 1024 / 1024;
     float gbTotal = float(m_drive.bytesTotal()) / 1024 / 1024 / 1024;
-    return QString::number(qCeil(gbUsed)) + "/" + QString::number(qCeil(gbTotal)) + tr(" GB used");
+    return tr("%1/%2 GB used", "%1 - used space; %2 - total space")
+            .arg(QString::number(qCeil(gbUsed)), QString::number(qCeil(gbTotal)));
 }
 
 void Drive::setStorageInfoDrive(QStorageInfo storageInfo) {

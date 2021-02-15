@@ -20,6 +20,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QTranslator>
+#include <QLocale>
 
 #include "backend.h"
 
@@ -38,6 +40,18 @@ int main(int argc, char *argv[])
     #else
     engine.rootContext()->setContextProperty(QStringLiteral("debug"), false);
     #endif
+
+    // Translations
+    QLocale locale;
+    QString qmFilePath = QString("%1/%2.qm").arg("/usr/share/cyber-disk-usage/translations/").arg(locale.name());
+    if (QFile::exists(qmFilePath)) {
+        QTranslator *translator = new QTranslator(QGuiApplication::instance());
+        if (translator->load(qmFilePath)) {
+            QGuiApplication::installTranslator(translator);
+        } else {
+            translator->deleteLater();
+        }
+    }
 
     engine.addImportPath(QStringLiteral("qrc:/"));
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
